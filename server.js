@@ -2,9 +2,13 @@ const http = require("http");
 const bodyParser = require("body-parser");
 
 const express = require("express");
+//instaling pug
+
+app.set("view engine", "pug");
+app.set("views", "views");
 
 //local files
-const adminRoutes = require("./routes/admin");
+const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 //helpers
@@ -18,7 +22,7 @@ app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use("/admin", adminRoutes);
+app.use("/admin", adminData.routes);
 app.use(shopRoutes);
 
 app.use((req, res, next)=>{
