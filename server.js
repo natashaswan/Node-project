@@ -2,27 +2,24 @@ const http = require("http");
 const bodyParser = require("body-parser");
 
 const express = require("express");
-//instaling pug
 
-app.set("view engine", "pug");
-app.set("views", "views");
 
 //local files
-const adminData = require("./routes/admin");
+const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
-
-//helpers
-const rootDir = require("./utils/path");
 
 const path = require("path");
 
 const app = express();
 app.use(express.static('public'));
+//instaling pug
 
+app.set("view engine", "ejs");
+app.set("views", "views");
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use("/admin", adminData.routes);
+app.use("/admin", adminRoutes.routes);
 app.use(shopRoutes);
 
 app.use((req, res, next)=>{
