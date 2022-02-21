@@ -1,29 +1,31 @@
-<%- include('partials/head.ejs'); %> <%-include('partials/navigation.ejs'); %>
+<%- include('partials/head.ejs', {title: docTitle}); %>
+<%-include('partials/navigation.ejs'); %> 
 
-<main>
-<% for (let i =0; i<prod.length; i++){  %>
-  <h1>My Products</h1>
-  <div class="grid">
-    <article class="card product-item">
-      <header class="card_header">
-        <h1 class="product_title"><%= prod[i].newProductTitle %></h1>
-      </header>
-      <div class="card_image">
-        <img
-          src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
-          width="20%"
-          height="20%"
-        />
-      </div>
-      <div class="card_content">
-        <h2 class="product_price"><%= prod[i].newProductPrice %> %></h2>
-        <p class="product-description"><%= prod[i].newProductDescription %></p>
-      </div>
-      <div class="card_actions">
-        <button class="btn">Add to cart</button>
-      </div>
-    </article>
-  </div>
-<% } %>
-</main>
-<%- include('partials/end.ejs'); %>
+
+<% for (let i =0; i<prod.length;i++){ %>
+  <main>
+    <h1>My Products</h1>
+    <div class="grid">
+      <article class="card product-item">
+        <header class="card_header">
+          <h1 class="product_title"><%= prod[i].title %></h1>
+        </header>
+        <div class="card_image">
+          <img
+            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+            width="20%"
+            height="20%"
+          />
+        </div>
+        <div class="card_content">
+          <h2 class="product_price"><%= prod[i].price %></h2>
+          <p class="product-description"><%= prod[i].description%></p>
+        </div>
+        <div class="card_actions">
+          <button class="btn">Add to cart</button>
+        </div>
+      </article>
+    </div>
+  </main>
+  <% } %> <%- include('partials/end.ejs'); %>
+</prod.length;i++)>

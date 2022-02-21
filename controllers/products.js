@@ -1,4 +1,4 @@
-const products = [];
+const Product = require("../models/product")
 
 exports.addProductGet = (req, res, next)=>{
     res.render("add-product", {
@@ -11,20 +11,20 @@ exports.addProductGet = (req, res, next)=>{
  };
 
  exports.addProductPost = (req, res, next)=>{
-    products.push({
-        newProductTitle: req.body.title, 
-        newProductPrice: req.body.price, 
-        newProductDescription: req.body.description});    
+    const product = new Product(req.body.title, req.body.price, req.body.description); 
+    product.saveProducts();
     res.redirect("/");
 };
 
 exports.shopGetProducts = (req, res, next)=>{
-    console.log(products);
+    const arrOfProducts = Product.fetchProducts();
     //render method allows a second arg 
     //to pass data to be used
+    console.log(arrOfProducts)
     res.render("shop", {
-        prod: products, 
+        prod: arrOfProducts, 
         docTitle: "Shop",
+        
         // path: "/",
         // hasProducts: products.length > 0,
         // activeShop: true,
@@ -32,4 +32,4 @@ exports.shopGetProducts = (req, res, next)=>{
     });
 };      
 
-exports.products = products;
+
