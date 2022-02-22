@@ -17,15 +17,16 @@ module.exports = class Product {
         this.description = _description;
     }
     saveProducts(){  
-        const products = [];
-        
+             
         fs.readFile(dataPath, (err, fileData)=>{
+            let products = [];
             if(!err){
-                products.push(JSON.parse(fileData));
+                products = JSON.parse(fileData);
                 
             }
+            
             products.push(this)
-            fs.writeFile(dataPath, JSON.stringify(products, null, 2), {flag: "w"}, (err)=>{
+            fs.writeFile(dataPath, JSON.stringify(products, null, 2), (err)=>{
                 console.log(err);
             })
            

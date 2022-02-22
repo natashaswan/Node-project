@@ -1,14 +1,12 @@
 [
-  [
-    {
-      "title": "first title",
-      "price": "787",
-      "description": "test description"
-    }
-  ],
   {
-    "title": "second title",
-    "price": "98",
-    "description": "test description"
+    "title": "title one",
+    "price": "67.99",
+    "description": "description"
+  },
+  {
+    "title": "title two ",
+    "price": "67.99",
+    "description": "description"
   }
 ]
