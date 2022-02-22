@@ -4,8 +4,6 @@ const productsControllers = require("./controllers/error404");
 
 const express = require("express");
 
-const path = require("path");
-
 //local files
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
@@ -13,7 +11,7 @@ const shopRoutes = require("./routes/shop");
 const app = express();
 app.use(express.static('public'));
 
-//instaling 
+//templating
 app.set("view engine", "ejs");
 app.set("views", "views");
 

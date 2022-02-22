@@ -1,8 +1,6 @@
-<%- include('partials/head.ejs', {title: docTitle}); %>
-<%-include('partials/navigation.ejs'); %> 
-
-
-<% for (let i =0; i<prod.length;i++){ %>
+<%- include('partials/head.ejs', {title: docTitle}); %> <%-
+include('partials/navigation.ejs'); %> <% if (prod.length > 0) {%> <% for (let i
+=0; i<prod.length;i++){ %>
   <main>
     <h1>My Products</h1>
     <div class="grid">
@@ -27,5 +25,8 @@
       </article>
     </div>
   </main>
-  <% } %> <%- include('partials/end.ejs'); %>
-</prod.length;i++)>
+  <% } %> <% } %>
+
+  <h2>no more products</h2>
+  <%- include('partials/end.ejs'); %>
+</prod.length;i++){>

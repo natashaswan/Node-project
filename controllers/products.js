@@ -17,13 +17,12 @@ exports.addProductGet = (req, res, next)=>{
 };
 
 exports.shopGetProducts = (req, res, next)=>{
-    const arrOfProducts = Product.fetchProducts();
-    //render method allows a second arg 
-    //to pass data to be used
-    console.log(arrOfProducts)
-    res.render("shop", {
-        prod: arrOfProducts, 
+    Product.fetchProducts(products=>{
+        res.render("shop", {
+        prod: products, 
         docTitle: "Shop",
+    });
+   
         
         // path: "/",
         // hasProducts: products.length > 0,
