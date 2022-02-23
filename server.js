@@ -4,9 +4,20 @@ const productsControllers = require("./controllers/error404");
 
 const express = require("express");
 
-//local files
+//local files/routes
 const adminRoutes = require("./routes/admin");
+const allProductsAdminRoutes = require("./routes/admin");
+
 const shopRoutes = require("./routes/shop");
+const homeRoutes = require("./routes/shop");
+const aboutRoutes = require("./routes/shop");
+const cartRoutes = require("./routes/shop");
+const eveningRoutes = require("./routes/shop");
+const casualRoutes = require("./routes/shop");
+const floralRoutes = require("./routes/shop");
+
+
+
 
 const app = express();
 app.use(express.static('public'));
@@ -18,6 +29,7 @@ app.set("views", "views");
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/admin", adminRoutes.routes);
+
 app.use(shopRoutes);
 
 app.use(productsControllers.getError404Page);

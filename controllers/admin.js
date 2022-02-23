@@ -3,7 +3,7 @@ const Product = require("../models/product")
 exports.addProductGet = (req, res, next)=>{
     res.render("add-product", {
         docTitle: "Add product admin page",
-        // path: "/admin/add-product",
+        path: "/admin/add-product",
         // formsCSS: true,
         // productCSS: true,
         // activeAddProduct: true
@@ -16,19 +16,9 @@ exports.addProductGet = (req, res, next)=>{
     res.redirect("/");
 };
 
-exports.shopGetProducts = (req, res, next)=>{
-    Product.fetchProducts(products=>{
-        res.render("shop", {
-        prod: products, 
-        docTitle: "Shop",
-    });
-   
-        
-        // path: "/",
-        // hasProducts: products.length > 0,
-        // activeShop: true,
-        // productCSS: true
-    });
-};      
-
-
+exports.allProductsGet = (req, res, next) =>{
+    res.render("all-products-admin",{
+    docTitle: "All Products Admin Page",
+    path: "/admin/all-products-admin"
+    })
+}

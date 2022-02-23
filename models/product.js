@@ -33,23 +33,9 @@ module.exports = class Product {
         })
         
 
-
-
-        // fs.readFile(dataPath, (err, fileData)=>{            
-        //     let products = [];
-        //     products.push(this);
-        //     if(!err){
-        //         return products = JSON.parse(fileData);
-        //     }
-            
-        //     fs.writeFile(dataPath, JSON.stringify(products), (err)=>{
-        //         console.log(err);
-        //     });
-        // });      
     }
     static fetchProducts(cb){
-        console.log("trying to read data")
-        console.log(dataPath.length)
+        
         fs.readFile(dataPath, (err, fileData)=>{
             if (err || dataPath.length === 0){
                 return cb([]);
