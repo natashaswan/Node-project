@@ -1,36 +1,43 @@
-<body>
-  <header class="main-header">
-    <nav class="main-header__nav">
-      <ul class="main-header__item-list">
-       
-        <li class="main-header__item">
-          <a class="<%= path === "/home" ? "active": "" %>" href="/home">Home</a>
-        </li>
-        <li class="main-header__item">
-          <a class="<%= path === "/about" ? "active": "" %>" href="/about">About</a>
-        </li>
-        <li class="main-header__item">
-          <a class="<%= path === "/evening-dresses" ? "active": "" %>" href="/evening-dresses">Evening Dresses</a>
-        </li>
-        <li class="main-header__item">
-          <a class="<%= path === "/casual-dresses" ? "active": "" %>" href="/casual-dresses">Everyday Dresses</a>
-        </li>
-        <li class="main-header__item">
-          <a class="<%= path === "/floral-dresses" ? "active": "" %>" href="/floral-dresses">Floral Dresses</a>
-        </li>
-        <!-- admin routes -->
-        <li class="main-header__item">
-          <a class="<%= path === "/admin/all-products-admin" ? "active": "" %>" href="/admin/all-products-admin"> All products admin</a>
-        </li>
-       
-        <li class="main-header__item">
-          <a class="<%= path === "/admin/add-product" ? "active": "" %>" href="/admin/add-product">Add Product</a>
-        </li>
-        <!-- cart -->
-        <li class="main-header__item">
-          <a class="<%= path === "/cart" ? "active": "" %>" href="/cart">My Cart</a>
-        </li>
-      </ul>
-    </nav>
+
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <p>Logo here</p>
+        </div>
+        <nav>
+        <ul class="main-header__item-list">
+        
+          <li class="main-header__item">
+            <a class="<%= path === "/home" ? "active": "" %>" href="/home">Home</a>
+          </li>
+          <li class="main-header__item">
+            <a class="<%= path === "/about" ? "active": "" %>" href="/about">About</a>
+          </li>
+          <li class="main-header__item">
+            <a class="<%= path === "/evening-dresses" ? "active": "" %>" href="/evening-dresses">Evening Dresses</a>
+          </li>
+          <li class="main-header__item">
+            <a class="<%= path === "/casual-dresses" ? "active": "" %>" href="/casual-dresses">Everyday Dresses</a>
+          </li>
+          <li class="main-header__item">
+            <a class="<%= path === "/floral-dresses" ? "active": "" %>" href="/floral-dresses">Floral Dresses</a>
+          </li>
+          <!-- admin routes -->
+          <li class="main-header__item">
+            <a class="<%= path === "/admin/all-products-admin" ? "active": "" %>" href="/admin/all-products-admin"> All products admin</a>
+          </li>
+        
+          <li class="main-header__item">
+            <a class="<%= path === "/admin/add-product" ? "active": "" %>" href="/admin/add-product">Add Product</a>
+          </li>
+          <!-- cart -->
+          <li class="main-header__item">
+            <a class="<%= path === "/cart" ? "active": "" %>" href="/cart">My Cart</a>
+          </li>
+        </ul>
+        </nav>
+      </div>
+    </div>
   </header>
-</body>
+  

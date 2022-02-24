@@ -1,3 +1,45 @@
-<%-include('partials/head.ejs'); %> <%-include('partials/head-title.ejs',
-{title:docTitle, path:path}); %> <%-include('partials/navigation.ejs'); %> This
-is home page <%- include('partials/end.ejs'); %>
+<%-include('partials/head.ejs'); %>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<script
+  src="https://kit.fontawesome.com/44c26c1d6e.js"
+  crossorigin="anonymous"
+></script>
+
+<%-include('partials/head-title.ejs', {title:docTitle, path:path}); %>
+<%-include('partials/navigation.ejs'); %>
+
+<div class="header">
+  <div class="row">
+    <div class="col-2">
+      <h1>
+        Beautiful Dress <br />
+        For Beautiful You!
+      </h1>
+
+      <p>
+        Our brand choose hundreds of women in Europe and United States.Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+      </p>
+      <a href="#" class="btn">Shop Dresses &#8594;</a>
+    </div>
+    <div class="col-2">
+      <img
+        src="https://images.unsplash.com/photo-1499939667766-4afceb292d05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbmluZyUyMGZsb3JhbCUyMGRyZXNzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+        alt=""
+      />
+    </div>
+  </div>
+</div>
+<%-include('partials/featured.ejs'); %>
+<%-include('partials/featured-products.ejs'); %>
+<%-include('partials/footer.ejs'); %> <%-include('partials/end.ejs'); %>
