@@ -1,4 +1,28 @@
-<%- include('partials/head.ejs', {title: docTitle, path: path}); %> <%-
-include('partials/navigation.ejs'); %>
-<h2>This is all products admin page</h2>
-<%- include('partials/end.ejs'); %>
+<%-include('partials/head.ejs'); %>
+<link rel="stylesheet" href="/css/product.css" />
+<%-include('partials/head-title.ejs', {title: docTitle, path: path}); %>
+<%-include('partials/navigation.ejs'); %>
+<h1>My Products</h1>
+<% if (prod.length > 0) {%> <% for (let i=0; i < prod.length; i++){ %>
+<main>
+  <div class="grid">
+    <article class="card product-item">
+      <header class="card_header">
+        <h1 class="product_title"><%= prod[i].title %></h1>
+      </header>
+      <div class="card_image">
+        <img src="<%= prod[i].image %>" width="20%" height="20%" />
+      </div>
+      <div class="card_content">
+        <h2 class="product_price"><%= prod[i].price %></h2>
+        <p class="product-description"><%= prod[i].description%></p>
+      </div>
+      <div class="card_actions">
+        <button class="btn">Add to cart</button>
+      </div>
+    </article>
+  </div>
+</main>
+<% } %> <% } %>
+<h2>no products</h2>
+<%-include('partials/end.ejs'); %>

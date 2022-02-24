@@ -9,15 +9,6 @@ const adminRoutes = require("./routes/admin");
 const allProductsAdminRoutes = require("./routes/admin");
 
 const shopRoutes = require("./routes/shop");
-const homeRoutes = require("./routes/shop");
-const aboutRoutes = require("./routes/shop");
-const cartRoutes = require("./routes/shop");
-const eveningRoutes = require("./routes/shop");
-const casualRoutes = require("./routes/shop");
-const floralRoutes = require("./routes/shop");
-
-
-
 
 const app = express();
 app.use(express.static('public'));

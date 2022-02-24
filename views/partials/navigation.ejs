@@ -20,13 +20,11 @@
         </li>
         <!-- admin routes -->
         <li class="main-header__item">
-          <a class="<%= path === "/" ? "active": "" %>">All products</a></li>
+          <a class="<%= path === "/admin/all-products-admin" ? "active": "" %>" href="/admin/all-products-admin"> All products admin</a>
+        </li>
        
         <li class="main-header__item">
           <a class="<%= path === "/admin/add-product" ? "active": "" %>" href="/admin/add-product">Add Product</a>
-        </li>
-        <li class="main-header__item">
-          <a class="<%= path === "/admin/all-products-admin" ? "active": "" %>" href="/admin/all-products-admin">All Products admin</a>
         </li>
         <!-- cart -->
         <li class="main-header__item">

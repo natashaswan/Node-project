@@ -2,10 +2,10 @@ const Product = require("../models/product")
 
 exports.shopGetProducts = (req, res, next)=>{
     Product.fetchProducts(products=>{
-        res.render("shop", {
+        res.render("all-products-admin", {
         prod: products, 
-        docTitle: "Shop",
-        path: "/",
+        docTitle: "All Products Admin",
+        path: "/all-products-admin",
     });
    
         // hasProducts: products.length > 0,
@@ -15,49 +15,64 @@ exports.shopGetProducts = (req, res, next)=>{
 };      
 
 exports.shopGetCart = (req, res, next)=>{
-        res.render("cart", {
-         
-        docTitle: "Cart",
-        path: "/cart",
+    res.render("cart", {         
+    docTitle: "Cart",
+    path: "/cart",
     });
 }; 
 
 exports.shopGetHome = (req, res, next)=>{
-    res.render("home", {
-     
+    res.render("home", {     
     docTitle: "Homepage",
     path: "/home",
 });
 };
 
 exports.shopGetAbout = (req, res, next)=>{
-    res.render("about", {
-     
+    res.render("about", {     
     docTitle: "About",
     path: "/about",
 });
 };
 
 exports.shopGetFloralDresses = (req, res, next)=>{
-    res.render("floral-dresses", {
-     
-    docTitle: "Floral dresses",
-    path: "/floral-dresses",
-});
+    Product.fetchProducts(products=>{
+        res.render("all-products-admin", {
+        prod: products, 
+        docTitle: "All Products Admin",
+        path: "/floral-dresses",
+    });
+   
+        // hasProducts: products.length > 0,
+        // activeShop: true,
+        // productCSS: true
+    });
 };
 
 exports.shopGetEveningDresses = (req, res, next)=>{
-    res.render("evening-dresses", {
-     
-    docTitle: "Evening Dresses dresses",
-    path: "/evening-dresses",
-});
+    Product.fetchProducts(products=>{
+        res.render("all-products-admin", {
+        prod: products, 
+        docTitle: "All Products Admin",
+        path: "/evening-dresses",
+    });
+   
+        // hasProducts: products.length > 0,
+        // activeShop: true,
+        // productCSS: true
+    });
 };
 
 exports.shopGetCasualDresses = (req, res, next)=>{
-    res.render("casual-dresses", {     
-    docTitle: "Evening Dresses dresses",
-    path: "/casual-dresses",
-});
+    Product.fetchProducts(products=>{
+        res.render("all-products-admin", {
+        prod: products, 
+        docTitle: "All Products Admin",
+        path: "/casual-dresses",
+    });   
+        // hasProducts: products.length > 0,
+        // activeShop: true,
+        // productCSS: true
+    });
 };
 
