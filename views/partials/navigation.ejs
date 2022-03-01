@@ -6,13 +6,17 @@
           <p>Logo here</p>
         </div>
         <nav>
-        <ul class="main-header__item-lis  t" id="menu-items">
+        <ul class="main-header__item-list" id="menu-items">
         
           <li class="main-header__item">
             <a class="<%= path === "/home" ? "active": "" %>" href="/home">Home</a>
           </li>
           <li class="main-header__item">
             <a class="<%= path === "/about" ? "active": "" %>" href="/about">About</a>
+          </li>
+
+          <li class="main-header__item">
+            <a class="<%= path === "/all-products-list" ? "active": "" %>" href="/all-products-list">All Dresses</a>
           </li>
           <li class="main-header__item">
             <a class="<%= path === "/evening-dresses" ? "active": "" %>" href="/evening-dresses">Evening Dresses</a>
@@ -35,25 +39,12 @@
           <li class="main-header__item">
             <a class="<%= path === "/cart" ? "active": "" %>" href="/cart">My Cart</a>
           </li>
+
         </ul>
         </nav>
         <img class="menu-icon" src="https://img.icons8.com/ios-glyphs/30/000000/menu--v1.png" alt="menu icon" onClick="menuToggle()" />
       
 
-      <script>
-        const MenuItems = document.getElementById("menu-items");
-        MenuItems.style.maxhHeight = "0px";
-        function menuToggle(){
-          if(MenuItems.style.maxHeight === "0px"){
-              MenuItems.style.maxHeight = "200px";
-            }
-          else {
-              MenuItems.style.maxHeight = "0px";
-            }
-          }
-        
-
-      </script>
       </div>
     </div>
   </header>

@@ -2,7 +2,7 @@ const Product = require("../models/product")
 
 exports.allProductsGet = (req, res, next)=>{
     Product.fetchProducts(products=>{
-        res.render("all-products-admin", {
+        res.render("../views/admin/all-products-admin", {
         prod: products, 
         docTitle: "All Products Admin",
         path: "admin/all-products-admin",
@@ -15,7 +15,7 @@ exports.allProductsGet = (req, res, next)=>{
 };
 
 exports.addProductGet = (req, res, next)=>{
-        res.render("add-product", {
+        res.render("../views/admin/add-product", {
         docTitle: "Add product admin page",
         path: "/admin/add-product",
         // formsCSS: true,
@@ -30,7 +30,8 @@ exports.addProductGet = (req, res, next)=>{
         req.body.price, 
         req.body.description,
         req.body.image,
-        req.body.category
+        req.body.category.selected,
+        req.body.id
         ); 
     product.saveProducts();
     res.redirect("/");

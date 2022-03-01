@@ -4,7 +4,8 @@
 <%-include('partials/navigation.ejs'); %>
 
 <h1>Casual Dresses</h1>
-<% if (prod.length > 0) {%> <% for (let i=0; i < prod.length; i++){ %>
+<% if (prod.length > 0 && prod.category === "") {%> 
+<% for (let i=0; i < prod.length; i++){ %>
 <main>
   <div class="grid">
     <article class="card product-item">
@@ -18,9 +19,12 @@
         <h2 class="product_price"><%= prod[i].price %></h2>
         <p class="product-description"><%= prod[i].description%></p>
       </div>
-      <div class="card_actions">
-        <button class="btn">Add to cart</button>
-      </div>
+      <form action="/add-to-cart" method="">
+        <input class="card_actions">
+          <button class="btn">Add to cart</button>
+          <input type="hidden" name="productID" value="<%= prod[i].id %>"></input>
+      </input>
+      </form>
     </article>
   </div>
 </main>

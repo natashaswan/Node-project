@@ -1,7 +1,7 @@
-<%-include('partials/head.ejs') %>
+<%-include('../partials/head.ejs') %>
 <link rel="stylesheet" href="/css/forms.css" />
-<%-include('partials/head-title.ejs', {title: docTitle, path: path}); %>
-<%-include('partials/navigation.ejs'); %>
+<%-include('../partials/head-title.ejs', {title: docTitle, path: path}); %>
+<%-include('../partials/navigation.ejs'); %>
 
 <main>
   <form class="product-form" action="/admin/add-product" method="POST">
@@ -13,13 +13,14 @@
       <input type="text" name="price" id="price" />
 
       <label for="description">Description</label>
-      <input type="text" name="description" id="description" />
+      <input type="text" name="description" id="description" rows="5" />
 
       <label for="image">Image URL</label>
       <input type="url" name="image" id="image" />
 
       <label for="category">Choose a category:</label>
-      <select id="category" name="category">
+      <select name="category" id="category">
+        <option value="">--Please choose a category-</option>
         <option value="casual-dresses">Casual Dresses</option>
         <option value="evening-dresses">Evening Dresses</option>
         <option value="floral-dresses">Floral Dresses</option>
@@ -30,4 +31,4 @@
   </form>
 </main>
 
-<%-include('partials/end.ejs'); %>
+<%-include('../partials/end.ejs'); %>

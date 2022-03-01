@@ -4,7 +4,8 @@
 <%-include('partials/navigation.ejs'); %>
 
 <h1>Evening Dresses</h1>
-<% if (prod.length > 0) {%> <% for (let i=0; i < prod.length; i++){ %>
+<% if (prod.length > 0 && prod.category === "evening-dresses") {%> <% for (let
+i=0; i < prod.length; i++){ %>
 <main>
   <div class="grid">
     <article class="card product-item">
