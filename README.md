@@ -2,7 +2,7 @@
 
 > Individual Project. 
 
-### Status: in progress, active
+### Status: in progress, active | this description will be updated as the project progresses
 ___
 ## Table of Contents
 
