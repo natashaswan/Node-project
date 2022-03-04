@@ -55,7 +55,8 @@ The application loads products from a file (database to be added) and displays t
   
 
 ## Improvement Opportunities and known bugs
-1. to be added
+1. add database
+2. currently using img urls from unsplash, imgs cannot be cropped thus do not always look great.
 
 
 ## Technologies used:
