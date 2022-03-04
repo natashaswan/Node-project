@@ -4,7 +4,7 @@ const shopControllers = require("../controllers/shop");
 
 const router = express.Router();
 
-router.get("/", shopControllers.shopGetProducts)
+router.get("/", shopControllers.shopGetHome)
 
 router.get("/home", shopControllers.shopGetHome);
 

@@ -45,8 +45,15 @@
         <% } %>
       </div>
       <p><%= prod[i].price %></p>
+      <form action="/cart" method="post">
+        <button type="submit" class="btn-prod-list">Add to cart</button>
+        <input type="hidden" name="productID" value="<%= prod.id %>"></input>
+      </form>
+      
+        <a href="/all-products-list/<%= prod[i].id %>" class="btn-prod-list">Details</a>
+      
     </div>
-
+      
     <% } %>
   </div>
   <% } %>

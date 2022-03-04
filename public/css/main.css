@@ -104,11 +104,11 @@ p {
   flex-basis: 50%;
   min-width: 300px;
 }
-.col-2 img {
+.home-img {
   padding: 50px 0;
   max-width: 100%;
 }
-.col-2 h1 {
+.h1-home {
   font-size: 50px;
   line-height: 60px;
   margin: 25px 0;
@@ -288,4 +288,91 @@ select:focus {
 .page-btn span:hover {
   background: #ff523b;
   color: white;
+}
+.btn-prod-list {
+  display: inline-block;
+  margin: 0 0 0 8px;
+  padding: 8px 8px 8px 8px;
+  background-color: #ff523b;
+  border-radius: 10px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  border-width: 0px;
+  border-style: outset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+  text-decoration: none;
+  color: rgb(14, 13, 13);
+  font-size: medium;
+}
+.btn-prod-list:hover {
+  background-color: #563434;
+  color: #fff;
+}
+
+/* single product page */
+.single-product {
+  margin-top: 80px;
+}
+.single-product .col-2 {
+  padding: 20px;
+}
+.single-product h4 {
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+.single-product select {
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ff523b;
+}
+.single-product input {
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-right: 10px;
+  border: 1px solid #ff523b;
+}
+input:focus {
+  outline: none;
+}
+.small-img-row {
+  display: flex;
+  justify-content: space-between;
+}
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+/* media query for less that 600 screen size */
+@media only screen and (max-width: 600px) {
+  .row {
+    text-align: center;
+  }
+  .col-2,
+  .col-3,
+  .col-4 {
+    flex-basis: 100%;
+  }
+  .single-product .row {
+    text-align: left;
+  }
+  .single-product .col-2 {
+    padding: 20px 0;
+  }
+  .single-product .h1 {
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .small-img-col {
+    padding-top: 0px;
+  }
 }

@@ -15,17 +15,18 @@
       </div>
       <div class="card_content">
         <h2 class="../product_price"><%= prod[i].price %></h2>
-        <p class="../product-description"><%= prod[i].description%></p>
+        <p class="../product-description"><%= prod[i].description %></p>
       </div>
-      <form action="/admin/product-edit" method="POST">
-        <div class="card_actions">
-          <button class="btn">Edit</button>
-        </div>
-      </form>
-      <form action="/admin/product-edit" method="POST">
-        <div class="card_actions">
-          <button class="btn">Delete</button>
-        </div>
+
+      <a
+        href="/admin/product-edit/<%= prod[i].id %>?edit=<%= edit %>"
+        class="btn"
+        >Edit</a
+      >
+
+      <form action="/admin/delete-product" method="post">
+        <button class="btn">Delete</button>
+        <input type="hidden" value="<%= prod[i].id %>" name="productID" />
       </form>
     </article>
   </div>

@@ -1,8 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 const { stringify } = require("querystring");
-//const pathUtil = require("../utils/path");
-let products = [];
+
+
 const dataPath = path.join(
     __dirname,
     "../", 
@@ -32,6 +32,7 @@ module.exports = class Product {
             })           
         })
     }
+
     static fetchProducts(cb){        
         fs.readFile(dataPath, (err, fileData)=>{
             if (err || fileData.length === 0){
@@ -41,11 +42,13 @@ module.exports = class Product {
             });
     }   
 
+    // NOT WORKING, NEED TO FIX
     static fetchProductById(id, cb){
-        let product = {};
-        this.fetchProducts(products=>{
-            product = products.find(element=>element.id === id);            
-        })
-        cb(product);
+        let fetchedProduct = {};
+        this.fetchProducts(products=>{  
+            let fetchedProductIndex = products.findIndex(el => el.id == id); 
+            fetchedProduct = products[fetchedProductIndex];
+        });
+        cb(fetchedProduct);
     }
-}
+};

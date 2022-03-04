@@ -1,6 +1,6 @@
 const { redirect } = require("express/lib/response");
 const Cart = require("../models/cart");
-const Product = require("../models/product")
+const Product = require("../models/product");
  
 exports.shopGetFloralDresses = (req, res, next)=>{
     Product.fetchProducts(products=>{
@@ -41,14 +41,17 @@ exports.shopGetCasualDresses = (req, res, next)=>{
 };
 
 exports.shopPostCart = (req, res, next)=>{
-    const productID  = req.body.productID;
-    
+    const prodId = req.body.productId;    
+    Cart.addProduct(prodId);
+  res.redirect('/cart');
 };
 
-exports.shopGetCart = (req, res, next)=>{
-    const productID = req.productID;
-    const cartProduct = Cart.addProduct(productID);
-    console.log(cartProduct)
+exports.shopGetCart = (req, res, next)=>{    
+    res.render('cart', {
+    path: '/cart',
+    docTitle: 'Your Cart'
+      });
+    
 }; 
 
 exports.shopGetOrders = (req, res, next)=>{
@@ -85,9 +88,11 @@ exports.shopGetAllProductsList = (req, res, next)=>{
     });
 };
 
+
 exports.shopGetProduct = (req, res, next)=>{
     const productID = req.params.productID;    
-    Product.fetchProductById(productID, product=>{
+    Product.fetchProducts(products=>{
+        let product = products.find(el => el.id == productID);
         res.render("product-page",{
         prod: product,
         docTitle: "Product Details",
@@ -96,16 +101,3 @@ exports.shopGetProduct = (req, res, next)=>{
     });
 };
 
-exports.shopGetProducts = (req, res, next)=>{
-    Product.fetchProducts(products=>{
-        res.render("../views/admin/all-products-admin", {
-        prod: products, 
-        docTitle: "All Products Admin",
-        path: "/all-products-admin",
-    });
-   
-        // hasProducts: products.length > 0,
-        // activeShop: true,
-        // productCSS: true
-    });
-};

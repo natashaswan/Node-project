@@ -15,27 +15,45 @@ const dataPath = path.join(
 
 module.exports = class Cart {    
     static addProduct(id){
-        let cartProducts = [];
-        fs.readFile(dataPath, (err, allProductsData)=>{
-            if (err){
-                console.log(err);
+        let cartObj = {
+            title: "title",
+            id: 0,
+            price: 0,
+            quantity: 0,
+            totalPrice: 0
+        }
+        
+        fs.readFile(cartPath, (err, fileContent)=>{
+            let cart = [];
+            if (!err && fileContent.length > 0){
+                cart = JSON.parse(fileContent);
+                if (cart.findIndex(el=>el.id == id)){
+                    cart[cart.findIndex(el=>el.id==id)].totalPrice = totalPrice*2;
+                    cart[cart.findIndex(el=>el.id==id)].quantity = quantity++;
+                }
+                fs.writeFile(cartPath, JSON.stringify(cart), err => {
+                    console.log(err);
+                    });
             }
-            cartProducts = JSON.parse(allProductsData);              
-            console.log(cartProducts);        
+
+            else {
+                fs.readFile(dataPath, (err, dataContent)=>{
+                    let addedProd = dataContent.find(el=> el.id == id);
+                    cartObj.title = addedProd.title;
+                    cartObj.price = addedProd.price;   
+                    cartObj.totalPrice = addedProd.price;                 
+                });
+                fs.writeFile(cartPath, JSON.stringify(cartObj), err => {
+                    console.log(err);
+                    });
+            }
         })
-        fs.writeFile(cartPath, JSON.stringify(cartProducts, null, 2), (err)=>{
-            console.log(err);
+
+    } 
+
+    static fetchCart(){
+        fs.readFile(cartPath, (err, fileContent)=>{
+            console.log(JSON.stringify(fileContent))
         })
     }
 }
-
-// fs.readFile(dataPath, (err, fileData)=>{
-//     let products = [];
-//     if(fileData.length !== 0){
-//         products = JSON.parse(fileData);                                
-//     }           
-//     products.push(this)
-//     fs.writeFile(dataPath, JSON.stringify(products, null, 2), (err)=>{
-//         console.log(err);
-//     })    
-

@@ -3,7 +3,13 @@
 <h2>This is a Cart page</h2>
 <main>
   <div>
-    <article></article>
+    <article>
+      <% for (let i=0; i<=prod.length; i++) { %>
+      <p><% prod.title %></p>
+      <p><% prod.price %></p>
+      <p><% totalprice %></p>
+      <% } %>
+    </article>
   </div>
 </main>
 
